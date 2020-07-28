@@ -1,35 +1,25 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-
-import "./App.css";
-
-import Navbar from "./components/Navbar.js";
-import Hero from "./containers/Hero";
-import Projects from "./containers/Projects";
-import About from "./containers/About";
-import Contact from "./containers/Contact";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Route
-        render={({ location }) => (
-          // <TransitionGroup>
-          //   <CSSTransition key={location.key} timeout={500} classNames="fade">
-              <Switch>
-                <Route exact path="/" render={() => <Hero />} />
-                <Route path="/projects" render={() => <Projects />} />
-                <Route path="/about" render={() => <About />} />
-                <Route path="/contact" render={() => <Contact />} />
-              </Switch>
-          //   </CSSTransition>
-          // </TransitionGroup>
-        )}
-      />
-    </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
